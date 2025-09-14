@@ -24,8 +24,9 @@ class RecipeCard extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFBF8EC),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // left-align
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Recipe image
           SizedBox(
             width: 500,
             height: 300,
@@ -35,14 +36,80 @@ class RecipeCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
+
+          // Recipe title
           const Padding(
-            padding: EdgeInsets.only(left: 10), 
+            padding: EdgeInsets.only(left: 15),
             child: Text(
-              'Lemon Roasted Herb Chicken',
+              'Lemon Herb Roasted Chicken',
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+          ),
+          const SizedBox(height: 8),
+
+          // Icons and info
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // First row: Timer & Chef Hat
+                Row(
+                  children: [
+                    // Timer
+                    Container(
+                      width: 30,
+                      height: 30,
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(186, 46, 89, 168),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Image.asset('assets/Timer.png'),
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('Prep: 15 mins'),
+
+                    const SizedBox(width: 50), // spacing between the two
+
+                    // Chef Hat
+                    Container(
+                      width: 30,
+                      height: 30,
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(186, 46, 89, 168),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Image.asset('assets/ChefHat.png'),
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('Difficulty: Easy'),
+                  ],
+                ),
+                const SizedBox(height: 8),
+
+                // Second row: Star
+                Row(
+                  children: [
+                    Container(
+                      width: 30,
+                      height: 30,
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(186, 46, 89, 168),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Image.asset('assets/Star.png'),
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('Cook: 45 mins'),
+                  ],
+                ),
+              ],
             ),
           ),
         ],

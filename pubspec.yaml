@@ -21,3 +21,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/lemonroastedchicken.jpg
+    - assets/Timer.png
+    - assets/ChefHat.png
+    - assets/Star.png
